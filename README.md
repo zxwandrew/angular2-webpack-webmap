@@ -10,6 +10,8 @@ A starting template for working with ArcGIS JS Maps with Angular2, Webpack, and 
 * module reloading is included
 * uses angular2-template-loader to help inline html/css templates into components
 * dojo!  ◉_◉
+* works with both 3.x and 4.x ArcGIS JS API
+
 
 ```
 npm install
