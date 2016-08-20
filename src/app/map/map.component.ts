@@ -1,5 +1,6 @@
 import { Component, ElementRef, Output, EventEmitter } from '@angular/core';
-import Map = require('esri/map');
+import Map = require('esri/Map');
+import MapView = require('esri/views/MapView');
 
 // import { MapService } from './map.service';
 
@@ -10,11 +11,18 @@ import Map = require('esri/map');
 })
 export class MapComponent {
   map:Map
+  view:MapView
+
   ngOnInit(){
-    this.map = new Map("mapDiv", {
-      basemap: "topo",  //For full list of pre-defined basemaps, navigate to http://arcg.is/1JVo6Wd
-      center: [-122.45, 37.75], // longitude, latitude
-      zoom: 13
+    this.map = new Map({
+      basemap: "streets"
+    });
+
+    this.view = new MapView({
+      container: "mapDiv",
+      map: this.map,
+      zoom: 4,
+      center: [15, 65]
     });
   }
   //
